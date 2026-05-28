@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --krimson: #e8192c;
+  --krimson-light: #ff3355;
+  --cyber: #00d4ff;
+  --bg-primary: #080810;
+  --bg-card: #0e0e18;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #080810;
+  color: #f0f0f5;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #080810; }
+::-webkit-scrollbar-thumb { background: #e8192c; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #ff3355; }
+
+/* Selection highlight */
+::selection {
+  background: rgba(232, 25, 44, 0.28);
+  color: #fff;
+}
+
+/* ─── Custom utilities ─────────────────────────────────────── */
+@layer utilities {
+  .text-glow-krimson {
+    text-shadow: 0 0 18px rgba(232, 25, 44, 0.7), 0 0 40px rgba(232, 25, 44, 0.3);
+  }
+  .text-glow-cyber {
+    text-shadow: 0 0 18px rgba(0, 212, 255, 0.7), 0 0 40px rgba(0, 212, 255, 0.3);
+  }
+
+  /* Grid background pattern */
+  .bg-grid-pattern {
+    background-image:
+      linear-gradient(rgba(232, 25, 44, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(232, 25, 44, 0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .bg-grid-subtle {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  /* Glassmorphism card */
+  .card-glass {
+    background: rgba(14, 14, 24, 0.75);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  /* Gradient borders */
+  .border-gradient-krimson {
+    border: 1px solid transparent;
+    background-clip: padding-box;
+    position: relative;
+  }
+  .border-gradient-krimson::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(232, 25, 44, 0.6), rgba(232, 25, 44, 0.1));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  /* Neon glow boxes */
+  .glow-krimson {
+    box-shadow: 0 0 20px rgba(232, 25, 44, 0.3), 0 0 60px rgba(232, 25, 44, 0.1);
+  }
+  .glow-cyber {
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.3), 0 0 60px rgba(0, 212, 255, 0.1);
+  }
+
+  /* Hover lift */
+  .hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .hover-lift:hover {
+    transform: translateY(-4px);
+  }
+
+  /* Section tag style */
+  .section-tag {
+    font-family: var(--font-jetbrains-mono), monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #e8192c;
+  }
+}
+
+/* ─── Progress bar base ────────────────────────────────────── */
+.progress-track {
+  height: 4px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+.progress-fill-krimson {
+  height: 100%;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #e8192c, #ff3355);
+}
+.progress-fill-cyber {
+  height: 100%;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #00a8cc, #00d4ff);
+}
+
+/* ─── Conic gradient border helper for hero avatar ─────────── */
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+@keyframes spin-border {
+  to { --angle: 360deg; }
+}
+.spin-border {
+  border: 2px solid transparent;
+  background:
+    linear-gradient(#0e0e18, #0e0e18) padding-box,
+    conic-gradient(from var(--angle), transparent 75%, #e8192c 100%) border-box;
+  animation: spin-border 4s linear infinite;
+}
