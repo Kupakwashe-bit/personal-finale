@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiGithub, FiLinkedin, FiMenu, FiX } from 'react-icons/fi';
+import { SiTiktok, SiInstagram } from 'react-icons/si';
 import { personalInfo } from '@/data/data';
 
 const navLinks = [
@@ -81,6 +82,24 @@ export default function Navbar() {
               <FiLinkedin size={17} />
             </a>
             <a
+              href={personalInfo.tiktok}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-1.5 text-dark-300 hover:text-white transition-colors"
+              aria-label="TikTok"
+            >
+              <SiTiktok size={15} />
+            </a>
+            <a
+              href={personalInfo.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-1.5 text-dark-300 hover:text-pink-500 transition-colors"
+              aria-label="Instagram"
+            >
+              <SiInstagram size={16} />
+            </a>
+            <a
               href="#contact"
               className="ml-1 px-4 py-1.5 text-sm font-semibold text-white bg-krimson hover:bg-krimson-light rounded-md shadow-krimson hover:shadow-krimson-lg transition-all duration-300"
             >
@@ -127,6 +146,12 @@ export default function Navbar() {
                   </a>
                   <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="text-dark-300 hover:text-cyber transition-colors">
                     <FiLinkedin size={18} />
+                  </a>
+                  <a href={personalInfo.tiktok} target="_blank" rel="noopener noreferrer" className="text-dark-300 hover:text-white transition-colors">
+                    <SiTiktok size={16} />
+                  </a>
+                  <a href={personalInfo.instagram} target="_blank" rel="noopener noreferrer" className="text-dark-300 hover:text-pink-500 transition-colors">
+                    <SiInstagram size={17} />
                   </a>
                 </div>
                 <a

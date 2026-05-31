@@ -3,6 +3,7 @@
 import { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { FiMail, FiPhone, FiGithub, FiLinkedin, FiSend, FiUser, FiMessageSquare } from 'react-icons/fi';
+import { SiTiktok, SiInstagram } from 'react-icons/si';
 import { personalInfo } from '@/data/data';
 
 const contactItems = [
@@ -23,7 +24,7 @@ const contactItems = [
   {
     Icon: FiGithub,
     label: 'GitHub',
-    value: 'github.com/Kupakwashe-bit',
+    value: 'github.com/KupaDev23',
     href: personalInfo.github,
     accent: 'krimson' as const,
   },
@@ -148,14 +149,47 @@ export default function Contact() {
               transition={{ duration: 0.4, delay: 0.4 }}
               className="mt-5 flex gap-3"
             >
-              {personalInfo.domains.map((d) => (
-                <div
-                  key={d}
-                  className="px-4 py-2 bg-dark-700/40 border border-dark-500 rounded-xl text-xs font-mono text-dark-300"
+              <a
+                href={personalInfo.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 bg-dark-700/40 hover:bg-dark-600 border border-dark-500 hover:border-krimson/40 rounded-xl text-xs font-mono text-dark-300 hover:text-krimson transition-all duration-200"
+              >
+                🌐 kupadev22.netlify.app
+              </a>
+            </motion.div>
+
+            {/* Social media row */}
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.5 }}
+              className="mt-5 pt-5 border-t border-white/[0.05]"
+            >
+              <p className="text-xs font-mono text-dark-400 uppercase tracking-widest mb-3">
+                Follow on social
+              </p>
+              <div className="flex gap-3">
+                <a
+                  href={personalInfo.tiktok}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2.5 px-4 py-2.5 bg-dark-700/50 hover:bg-dark-600 border border-dark-500 hover:border-white/20 rounded-xl text-sm text-dark-300 hover:text-white transition-all duration-300 group"
                 >
-                  🌐 {d}
-                </div>
-              ))}
+                  <SiTiktok size={15} className="group-hover:scale-110 transition-transform" />
+                  <span className="font-mono text-xs">@kupadev23</span>
+                </a>
+                <a
+                  href={personalInfo.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2.5 px-4 py-2.5 bg-dark-700/50 hover:bg-dark-600 border border-dark-500 hover:border-pink-500/30 rounded-xl text-sm text-dark-300 hover:text-pink-400 transition-all duration-300 group"
+                >
+                  <SiInstagram size={15} className="group-hover:scale-110 transition-transform" />
+                  <span className="font-mono text-xs">@kupadev23</span>
+                </a>
+              </div>
             </motion.div>
           </div>
 

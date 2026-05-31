@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { FiGithub, FiLinkedin, FiMail, FiArrowUp } from 'react-icons/fi';
+import { SiTiktok, SiInstagram } from 'react-icons/si';
 import { personalInfo } from '@/data/data';
 
 const navLinks = [
@@ -62,6 +63,24 @@ export default function Footer() {
               >
                 <FiMail size={15} />
               </a>
+              <a
+                href={personalInfo.tiktok}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="TikTok"
+                className="p-2 text-dark-300 hover:text-white bg-dark-800 hover:bg-dark-700 rounded-lg transition-all border border-dark-600"
+              >
+                <SiTiktok size={14} />
+              </a>
+              <a
+                href={personalInfo.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="p-2 text-dark-300 hover:text-pink-500 bg-dark-800 hover:bg-dark-700 rounded-lg transition-all border border-dark-600"
+              >
+                <SiInstagram size={14} />
+              </a>
             </div>
           </div>
 
@@ -102,12 +121,15 @@ export default function Footer() {
                 {personalInfo.phone}
               </p>
               <p className="text-dark-300">
-                <span className="text-dark-400 text-xs font-mono block mb-0.5">Domains</span>
-                <span className="flex flex-wrap gap-2">
-                  {personalInfo.domains.map((d) => (
-                    <span key={d} className="text-xs font-mono text-krimson/70">{d}</span>
-                  ))}
-                </span>
+                <span className="text-dark-400 text-xs font-mono block mb-0.5">Website</span>
+                <a
+                  href={personalInfo.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs font-mono text-krimson/70 hover:text-krimson transition-colors"
+                >
+                  kupadev22.netlify.app
+                </a>
               </p>
             </div>
           </div>

@@ -89,7 +89,7 @@ function ProjectCard({
         {/* Footer */}
         <div className="flex items-center gap-3 pt-4 border-t border-white/[0.05]">
           <a
-            href={`https://github.com/Kupakwashe-bit`}
+            href={`https://github.com/KupaDev23`}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 text-xs text-dark-300 hover:text-white transition-colors"
@@ -164,7 +164,7 @@ export default function Projects() {
           className="text-center mt-12"
         >
           <a
-            href="https://github.com/Kupakwashe-bit"
+            href="https://github.com/KupaDev23"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 border border-dark-500 hover:border-krimson/50 text-dark-300 hover:text-krimson rounded-xl text-sm transition-all duration-300 hover:-translate-y-0.5"

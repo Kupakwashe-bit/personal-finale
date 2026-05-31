@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FiGithub, FiLinkedin, FiMail, FiArrowDown, FiTerminal } from 'react-icons/fi';
+import { SiTiktok, SiInstagram } from 'react-icons/si';
 import { personalInfo } from '@/data/data';
 
 // ─── Typing animation ─────────────────────────────────────────────────────────
@@ -219,8 +220,33 @@ export default function Hero() {
               >
                 <FiMail size={19} />
               </a>
+              <a
+                href={personalInfo.tiktok}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="TikTok"
+                className="p-2 text-dark-300 hover:text-white hover:bg-dark-700 rounded-lg transition-all"
+              >
+                <SiTiktok size={17} />
+              </a>
+              <a
+                href={personalInfo.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="p-2 text-dark-300 hover:text-pink-500 hover:bg-dark-700 rounded-lg transition-all"
+              >
+                <SiInstagram size={18} />
+              </a>
               <span className="w-px h-5 bg-dark-500 mx-1" />
-              <span className="text-dark-300 text-sm font-mono">{personalInfo.domains[0]}</span>
+              <a
+                href={personalInfo.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-dark-300 hover:text-krimson text-sm font-mono transition-colors"
+              >
+                kupadev22.netlify.app
+              </a>
             </motion.div>
           </div>
 

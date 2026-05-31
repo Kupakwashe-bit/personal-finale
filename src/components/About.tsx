@@ -139,15 +139,15 @@ export default function About() {
               transition={{ duration: 0.4, delay: 0.3 }}
               className="flex gap-4 text-sm"
             >
-              {personalInfo.domains.map((d) => (
-                <span
-                  key={d}
-                  className="flex items-center gap-1.5 text-dark-300 hover:text-krimson transition-colors cursor-default font-mono"
-                >
-                  <FiExternalLink size={12} />
-                  {d}
-                </span>
-              ))}
+              <a
+                href={personalInfo.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 text-dark-300 hover:text-krimson transition-colors font-mono"
+              >
+                <FiExternalLink size={12} />
+                kupadev22.netlify.app
+              </a>
             </motion.div>
           </div>
 
